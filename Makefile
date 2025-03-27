@@ -1,10 +1,10 @@
 CC = gcc
-CFLAGS = -std=c99
+CFLAGS = -std=c99 -I.
 
 .PHONY: clocks
 
 clocks:
-	$(CC) $(CFLAGS) main.c -o clocks
+	$(CC) $(CFLAGS) *.c -o clocks
 
 clean:
 	rm clocks

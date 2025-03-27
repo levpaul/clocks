@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "common.h": "c",
+        "stddef.h": "c",
+        "stdbool.h": "c",
+        "stdint.h": "c",
+        "memory.h": "c",
+        "type_traits": "c",
+        "limits": "c",
+        "ratio": "c",
+        "tuple": "c",
+        "variant": "c",
+        "__bit_reference": "c",
+        "iterator": "c",
+        "string": "c",
+        "string_view": "c",
+        "chunk.h": "c"
+    }
+}
