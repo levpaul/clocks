@@ -1,16 +1,14 @@
 #include "common.h"
 #include "chunk.h"
-#include <stdio.h>
+#include "debug.h"
 
 int main(int argc, const char* argv[]) {
-  Chunk mine;
+  Chunk chunk;
 
-  initChunk(&mine);
-  printf("%d\n", mine.len);
-  writeChunk(&mine, OP_RETURN);
-  printf("%d - %d\n", mine.len, mine.code[0]);
-  printf("mainptr: %p\n", &mine.code);
-  freeChunk(&mine);
+  initChunk(&chunk);
+  writeChunk(&chunk, OP_RETURN);
+  disassembleChunk(&chunk, "test chunk");
+  freeChunk(&chunk);
 
   return 0;
 }

@@ -14,6 +14,7 @@
         "iterator": "c",
         "string": "c",
         "string_view": "c",
-        "chunk.h": "c"
+        "chunk.h": "c",
+        "debug.h": "c"
     }
 }

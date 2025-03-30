@@ -1,7 +1,10 @@
 CC = gcc
 CFLAGS = -std=c99 -I.
 
-.PHONY: clocks
+.PHONY: clocks run
+
+run: clocks
+	./clocks
 
 clocks:
 	$(CC) $(CFLAGS) *.c -o clocks
