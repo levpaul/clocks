@@ -21,6 +21,6 @@ void writeValueArray(ValueArray* array, Value value) {
 }
 
 void freeValueArray(ValueArray* array) {
-    FREE_ARRAY(Value, array, array->cap);
+    FREE_ARRAY(Value, array->values, array->cap);
     initValueArray(array);
 }
