@@ -31,8 +31,8 @@ int constantInstruction(const char *operation_name, Chunk *chunk, int offset) {
 // offset of the next instruction in the Chunk.
 int disassembleInstruction(Chunk *chunk, int offset) {
   printf("%04d ", offset);
-  if (offset > 0 && chunk->lines[offset] != chunk->lines[offset - 1]) {
-    printf("    |");
+  if (offset > 0 && chunk->lines[offset] == chunk->lines[offset - 1]) {
+    printf("   | ");
   } else {
     printf("%4d ", chunk->lines[offset]);
   }

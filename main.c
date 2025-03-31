@@ -6,18 +6,15 @@
 int main(int argc, const char *argv[]) {
   Chunk chunk;
 
-  printf("asdf");
   initChunk(&chunk);
 
   // Constant
-  printf("asdf");
   int constant = addConstant(&chunk, 1.2);
-  writeChunk(&chunk, OP_CONSTANT, 1);
-  writeChunk(&chunk, constant, 1);
+  writeChunk(&chunk, OP_CONSTANT, 123);
+  writeChunk(&chunk, constant, 123);
 
-  printf("asdf");
   // Return
-  writeChunk(&chunk, OP_RETURN, 2);
+  writeChunk(&chunk, OP_RETURN, 123);
 
   disassembleChunk(&chunk, "test chunk");
   freeChunk(&chunk);

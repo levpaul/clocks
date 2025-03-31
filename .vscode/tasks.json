@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Clocks (Debug)", // Matches the "preLaunchTask" in launch.json
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-g", // Include debug symbols
+                "-Wall", // Enable warnings
+                "-o",
+                "${workspaceFolder}/build/clocks-dbg", // Output binary
+                "${workspaceFolder}/*.c", // Source files
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}

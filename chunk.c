@@ -15,6 +15,7 @@ void writeChunk(Chunk *chunk, uint8_t item, int line) {
     int oldCap = chunk->cap;
     chunk->cap = GROW_CAPACITY(oldCap);
     chunk->code = GROW_ARRAY(uint8_t, chunk->code, oldCap, chunk->cap);
+    chunk->lines = GROW_ARRAY(int, chunk->lines, oldCap, chunk->cap);
   }
 
   chunk->code[chunk->len] = item;
