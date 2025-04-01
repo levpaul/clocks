@@ -4,8 +4,8 @@
 #include "chunk.h"
 
 typedef struct {
-  Chunk *chunk;
-  uint8_t *ip;
+  Chunk* chunk;
+  uint8_t* ip;
 } VM;
 
 typedef enum {
@@ -16,6 +16,6 @@ typedef enum {
 
 void initVM();
 void freeVM();
-InterpretResult interpret(Chunk *chunk);
+InterpretResult interpret(Chunk* chunk);
 
 #endif

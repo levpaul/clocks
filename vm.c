@@ -30,7 +30,7 @@ static InterpretResult run() {
 #undef READ_CONSTANT
 }
 
-InterpretResult interpret(Chunk *chunk) {
+InterpretResult interpret(Chunk* chunk) {
   vm.chunk = chunk;
   vm.ip = chunk->code;
   return run();

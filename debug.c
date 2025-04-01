@@ -4,7 +4,7 @@
 #include "debug.h"
 #include "value.h"
 
-void disassembleChunk(Chunk *chunk, const char *name) {
+void disassembleChunk(Chunk* chunk, const char* name) {
   printf("== %s ==\n", name);
 
   for (int offset = 0; offset < chunk->len;) {
@@ -12,12 +12,12 @@ void disassembleChunk(Chunk *chunk, const char *name) {
   }
 }
 
-int simpleInstruction(const char *operation_name, int offset) {
+int simpleInstruction(const char* operation_name, int offset) {
   printf("%s\n", operation_name);
   return offset + 1;
 }
 
-int constantInstruction(const char *operation_name, Chunk *chunk, int offset) {
+int constantInstruction(const char* operation_name, Chunk* chunk, int offset) {
   // this is the offset of the chunk's constants array where the constant lives
   uint8_t constant = chunk->code[offset + 1];
   printf("%-16s %4d '", operation_name, constant);
@@ -29,7 +29,7 @@ int constantInstruction(const char *operation_name, Chunk *chunk, int offset) {
 // disassembleInstruction takes in a Chunk pointer and instruction offset. It
 // prints information about the instruction at the given offset and returns the
 // offset of the next instruction in the Chunk.
-int disassembleInstruction(Chunk *chunk, int offset) {
+int disassembleInstruction(Chunk* chunk, int offset) {
   printf("%04d ", offset);
   if (offset > 0 && chunk->lines[offset] == chunk->lines[offset - 1]) {
     printf("   | ");

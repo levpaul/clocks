@@ -2,7 +2,7 @@
 #include "memory.h"
 #include <stdlib.h>
 
-void initChunk(Chunk *chunk) {
+void initChunk(Chunk* chunk) {
   chunk->len = 0;
   chunk->cap = 0;
   chunk->code = NULL;
@@ -10,7 +10,7 @@ void initChunk(Chunk *chunk) {
   initValueArray(&chunk->constants);
 }
 
-void writeChunk(Chunk *chunk, uint8_t item, int line) {
+void writeChunk(Chunk* chunk, uint8_t item, int line) {
   if (chunk->len <= chunk->cap) {
     int oldCap = chunk->cap;
     chunk->cap = GROW_CAPACITY(oldCap);
@@ -23,14 +23,14 @@ void writeChunk(Chunk *chunk, uint8_t item, int line) {
   chunk->len += 1;
 }
 
-void freeChunk(Chunk *chunk) {
+void freeChunk(Chunk* chunk) {
   FREE_ARRAY(uint8_t, chunk->code, chunk->cap);
   FREE_ARRAY(int, chunk->lines, chunk->cap);
   freeValueArray(&chunk->constants);
   initChunk(chunk);
 }
 
-int addConstant(Chunk *chunk, Value value) {
+int addConstant(Chunk* chunk, Value value) {
   writeValueArray(&chunk->constants, value);
   // Return index of where the constant was written
   return chunk->constants.len - 1;
