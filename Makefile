@@ -7,7 +7,7 @@ build:
 	mkdir build
 
 run: clocks
-	./clocks
+	./build/clocks
 
 clocks: build
 	$(CC) $(CFLAGS) *.c -o build/clocks
