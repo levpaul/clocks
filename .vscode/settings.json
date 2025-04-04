@@ -16,6 +16,7 @@
         "string_view": "c",
         "chunk.h": "c",
         "debug.h": "c",
-        "vm.h": "c"
+        "vm.h": "c",
+        "stdio.h": "c"
     }
 }
